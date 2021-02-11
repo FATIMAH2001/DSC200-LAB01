@@ -16,4 +16,231 @@ library(datasauRus)
 
 
 ### Lab Exercise
-( )
+lab 1
+various dataset in which data is written to appear as statistics we can representn data and calculate its value symbols answer.
+library(tidyverse)
+> library(datasauRus)
+> library(tidyverse)
+> library(datasauRus)
+> ?datasaurus_dozen
+> head(datasaurus_dozen)
+# A tibble: 6 x 3
+  dataset     x     y
+  <chr>   <dbl> <dbl>
+1 dino     55.4  97.2
+2 dino     51.5  96.0
+3 dino     46.2  94.5
+4 dino     42.8  91.4
+5 dino     40.8  88.3
+6 dino     38.7  84.9
+> summary(datasaurus_dozen)
+   dataset                x        
+ Length:1846        Min.   :15.56  
+ Class :character   1st Qu.:41.07  
+ Mode  :character   Median :52.59  
+                    Mean   :54.27  
+                    3rd Qu.:67.28  
+                    Max.   :98.29  
+       y           
+ Min.   : 0.01512  
+ 1st Qu.:22.56107  
+ Median :47.59445  
+ Mean   :47.83510  
+ 3rd Qu.:71.81078  
+ Max.   :99.69468
+ 
+ lab 2
+ view(datasaurus_dozen)
+> ?iris
+> view(datasaurus_dozen)
+> library(datasauRus)
+> datasaurus_dozen %>%
++     count(dataset) %>%
++     print(13)
+# A tibble: 13 x 2
+   dataset        n
+ * <chr>      <int>
+ 1 away         142
+ 2 bullseye     142
+ 3 circle       142
+ 4 dino         142
+ 5 dots         142
+ 6 h_lines      142
+ 7 high_lines   142
+ 8 slant_down   142
+ 9 slant_up     142
+10 star         142
+11 v_lines      142
+12 wide_lines   142
+13 x_shape      142
+> insatall.packages("datasauRus")
+Error in insatall.packages("datasauRus") : 
+  could not find function "insatall.packages"
+> insatall.packages("datasauRus")
+Error in insatall.packages("datasauRus") : 
+  could not find function "insatall.packages"
+> install.packages("datasauRus")
+Error in install.packages : Updating loaded packages
+
+Restarting R session...
+
+> install.packages("datasauRus")
+Installing package into ‘/home/rstudio-user/R/x86_64-pc-linux-gnu-library/4.0’
+(as ‘lib’ is unspecified)
+trying URL 'http://package-proxy/src/contrib/datasauRus_0.1.4.tar.gz'
+Content type 'application/x-tar' length 604887 bytes (590 KB)
+==================================================
+downloaded 590 KB
+
+* installing *binary* package ‘datasauRus’ ...
+* DONE (datasauRus)
+
+The downloaded source packages are in
+	‘/tmp/RtmpLKMHfT/downloaded_packages’
+> install.packages("datasauRus")
+Installing package into ‘/home/rstudio-user/R/x86_64-pc-linux-gnu-library/4.0’
+(as ‘lib’ is unspecified)
+trying URL 'http://package-proxy/src/contrib/datasauRus_0.1.4.tar.gz'
+Content type 'application/x-tar' length 604887 bytes (590 KB)
+==================================================
+downloaded 590 KB
+
+* installing *binary* package ‘datasauRus’ ...
+* DONE (datasauRus)
+
+The downloaded source packages are in
+	‘/tmp/RtmpLKMHfT/downloaded_packages’
+> install.packages("datasauRus")
+Installing package into ‘/home/rstudio-user/R/x86_64-pc-linux-gnu-library/4.0’
+(as ‘lib’ is unspecified)
+trying URL 'http://package-proxy/src/contrib/datasauRus_0.1.4.tar.gz'
+Content type 'application/x-tar' length 604887 bytes (590 KB)
+==================================================
+downloaded 590 KB
+
+* installing *binary* package ‘datasauRus’ ...
+* DONE (datasauRus)
+
+The downloaded source packages are in
+	‘/tmp/RtmpLKMHfT/downloaded_packages’
+> install.packages("datasauRus")
+Installing package into ‘/home/rstudio-user/R/x86_64-pc-linux-gnu-library/4.0’
+(as ‘lib’ is unspecified)
+trying URL 'http://package-proxy/src/contrib/datasauRus_0.1.4.tar.gz'
+Content type 'application/x-tar' length 604887 bytes (590 KB)
+==================================================
+downloaded 590 KB
+
+* installing *binary* package ‘datasauRus’ ...
+* DONE (datasauRus)
+
+The downloaded source packages are in
+	‘/tmp/RtmpLKMHfT/downloaded_packages’
+> 
+> install.packages("datasauRus")
+Installing package into ‘/home/rstudio-user/R/x86_64-pc-linux-gnu-library/4.0’
+(as ‘lib’ is unspecified)
+trying URL 'http://package-proxy/src/contrib/datasauRus_0.1.4.tar.gz'
+Content type 'application/x-tar' length 604887 bytes (590 KB)
+==================================================
+downloaded 590 KB
+
+* installing *binary* package ‘datasauRus’ ...
+* DONE (datasauRus)
+
+The downloaded source packages are in
+	‘/tmp/RtmpLKMHfT/downloaded_packages’
+> installed.packages("tidyverse")
+     Package LibPath Version Priority
+     Depends Imports LinkingTo
+     Suggests Enhances License
+     License_is_FOSS
+     License_restricts_use OS_type
+     Archs MD5sum NeedsCompilation
+     Built
+> library(datasauRus)
+> library(tidyverse)
+── Attaching packages ────────────────
+✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+✓ tibble  3.0.6     ✓ dplyr   1.0.4
+✓ tidyr   1.1.2     ✓ stringr 1.4.0
+✓ readr   1.4.0     ✓ forcats 0.5.1
+── Conflicts ─────────────────────────
+x dplyr::filter() masks stats::filter()
+x dplyr::lag()    masks stats::lag()
+> view(datasaurus_dozen)
+> dino_data <- datasaurus_dozen %>%
++     filter(dataset == "dino")
+> ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
++     geom_point()
+> dino_data %>%
++     summarize(r = cor(x, y))
+# A tibble: 1 x 1
+        r
+    <dbl>
+1 -0.0645
+> star_data <- datasaurus_dozen %>%
++     filter(dataset == "star")
+> ggplot(data = star_data, mapping = aes(x = x, y = y)) +
++     geom_point()
+> star_data %>%
++     summarize(r = cor(x, y))
+# A tibble: 1 x 1
+        r
+    <dbl>
+1 -0.0630
+> circle_data <- datasaurus_dozen %>%
++     filter(dataset == "circle")
+> ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
++     geom_point()
+> circle_data %>%
++     summarize(r = cor(x, y))
+# A tibble: 1 x 1
+        r
+    <dbl>
+1 -0.0683
+> datasaurus_dozen %>%
++     group_by(dataset) %>%
++     summarize(r = cor(x, y)) %>%
++     print(13)
+# A tibble: 13 x 2
+   dataset          r
+ * <chr>        <dbl>
+ 1 away       -0.0641
+ 2 bullseye   -0.0686
+ 3 circle     -0.0683
+ 4 dino       -0.0645
+ 5 dots       -0.0603
+ 6 h_lines    -0.0617
+ 7 high_lines -0.0685
+ 8 slant_down -0.0690
+ 9 slant_up   -0.0686
+10 star       -0.0630
+11 v_lines    -0.0694
+12 wide_lines -0.0666
+13 x_shape    -0.0656
+> 
+> ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
++     geom_point()+
++     facet_wrap(~ dataset, ncol = 3) +
++     theme(legend.position = "none")
+> datasaurus_dozen %>%
++     group_by(dataset) %>%
++     summarize(r = cor(x, y)) %>%
++     print(13)
+# A tibble: 13 x 2
+   dataset          r
+ * <chr>        <dbl>
+ 1 away       -0.0641
+ 2 bullseye   -0.0686
+ 3 circle     -0.0683
+ 4 dino       -0.0645
+ 5 dots       -0.0603
+ 6 h_lines    -0.0617
+ 7 high_lines -0.0685
+ 8 slant_down -0.0690
+ 9 slant_up   -0.0686
+10 star       -0.0630
+11 v_lines    -0.0694
+12 wide_lines -0.0666
+13 x_shape    -0.0656
